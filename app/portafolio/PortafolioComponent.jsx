@@ -97,7 +97,27 @@ const PortafolioComponent = () => {
         { image: "/images/link27.png", description: "Vision Trade Forex", link: "https://visiontradeforex.com/" },
         { image: "/images/link28.png", description: "Ton ORG", link: "https://ton.org/es/toncoin" },
         { image: "/images/link29.png", description: "Estating", link: "https://Estating.es" },
+        { image: "/images/safincorp.webp", description: "SafinCorp", link: "https://safincorp.cl/inicio" },
+        { image: "/images/eletrans-ii.jpg", description: "Eletrans", link: "https://eletrans.cl/" },
+        { image: "/images/familygroup.jpg", description: "FamilyPropiedades", link: "https://www.familypropiedades.cl/home" },
+        { image: "/images/centro-color.webp", description: "Centro Color", link: "https://centrocolor.cl/" },
+        { image: "/images/seguros_montenegro.png", description: "Seguros Montenegro", link: "https://www.segurosmontenegro.cl/" },
+        { image: "/images/mantauco.webp", description: "Mantauco", link: "https://mantauco.webnode.cl/" },
+        { image: "/images/hockey.png", description: "Hockey Academy", link: "https://hockeyacademy.cl/" },
 
+        // los ultimos portafolios agregados:
+        { image: "/images/mezclilla.png", description: "Tienda MDA", link: "https://mezclilla.micreatienda.cl/" },
+        { image: "/images/psicoterapia.png", description: "Emhpsicoterapia", link: "https://emhpsicoterapia.cl" },
+        { image: "/images/hotandcold.avif", description: "Hot and Cold Services", link: "https://hotandcold.cl" },
+        { image: "/images/plataforma_truequeo.png", description: "Plataforma Truequeo", link: "https://services-proyect.netlify.app/reservation" },
+        { image: "/images/saludya.png", description: "Panel Control App Saludya", link: "https://saludya-web.onrender.com" },
+        { image: "/images/soap_zapallar.png", description: "Soap Municipalidad de Zapallar", link: "https://soapzapallar.netlify.app" },
+        { image: "/images/greenpark.png", description: "Greenpark Academy", link: "https://greenparkacademia.com" },
+        { image: "/images/pandawok.png", description: "Sistema de Reservas Pandawok Valparaíso", link: "https://pandawok-reserve.netlify.app" },
+        { image: "/images/stopcae.png", description: "Stopcae", link: "https://stopcae.cl" },
+        { image: "/images/telolavo.jpeg", description: "Telolavo Carwash", link: "https://telolavo.onrender.com" },
+                { image: "/images/Sistema_de_lectura_RFID.jpeg", description: "Sistema de lectura RFID" }, // Usa la imagen del adjunto 1
+        { image: "/images/Dragon_watch.jpeg", description: "Tienda de Smartwatchs"}, // Usa la imagen del adjunto 2
     ];
 
     // Intervalo para el slider de imágenes principales
