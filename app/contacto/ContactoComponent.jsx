@@ -74,7 +74,7 @@ const ContactoComponent = () => {
               </div>
               <div className={` w-fullpy-2 md:py-3 lg:py-5  `}>
                 <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Santo Domingo</h4>
-                <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Los Crisamentos 146,  <br className={` hidden lg:inline `} />Santo Domingo.</p>
+                <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Los Crisantemos 146,  <br className={` hidden lg:inline `} />Santo Domingo.</p>
                 <iframe className={` w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20 `} src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3321.4701206204895!2d-71.61025642458614!3d-33.64497860750033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDM4JzQxLjkiUyA3McKwMzYnMjcuNyJX!5e0!3m2!1ses-419!2sus!4v1727751453089!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
               <div className={` w-full py-2 md:py-3 lg:py-5 `}>
@@ -123,7 +123,7 @@ const ContactoComponent = () => {
 
               <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina Santo Domingo</h3>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
-                Los Crisamentos 146, Santo Domingo.
+                Los Crisantemos 146, Santo Domingo.
               </address>
 
               <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina Santiago</h3>
