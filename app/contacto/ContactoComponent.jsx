@@ -143,6 +143,7 @@ const ContactoComponent = () => {
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
                 <a href="tel:+56942978432">+569 4297 8432</a><br />
                 <a href="tel:+56991275137">+569 9127 5137</a>
+                {/* testing */}
               </address>
 
               <h2 className={` text-lg md:text-xl font-bold mt-4 mb-2 text-left opacity-90 `} >Correos</h2>
