@@ -60,7 +60,7 @@ const ServicioCard = ({ id, index, titulo, precio, cuotas, descripcion, imagen, 
             return (
                 <p className={`block mt-7`}>
                     <a className={`block font-semibold text-base md:text-lg text-center py-1 bg-[#6a4bd0] hover:bg-[#613DD2] border-solid border-2 border-[#613DD2] rounded-full text-white text-opacity-70 hover:text-opacity-100 hover:shadow-md hover:shadow-[rgba(0,0,0,0.4)] transition-all ease-in-out duration-300 `}
-                        href='mailto:latasoftweb@gmail.com' alt=''>
+                        href="https://wa.me/56932555677" alt='Contactar'>
                         Contactar
                     </a>
                 </p>
@@ -86,9 +86,19 @@ const ServicioCard = ({ id, index, titulo, precio, cuotas, descripcion, imagen, 
                             <div className={`flex flex-col-reverse md:flex-row justify-center items-center px-0 pt-0 md:px-3 md:pt-3`}>
                                 <div className={`w-full md:w-7/12 transition-all ease-in-out duration-300`}>
                                     <h3 className={`block text-2xl md:text-3xl font-medium text-black pr-5 text-left`}>{titulo}</h3>
-                                    <div className={`mt-3 pr-6`}>
-                                        {precio && (<p className={`font-bold text-xl md:text-2xl text-[#613DD2] text-left`}>{precio}</p>)}
-                                        {cuotas && (<p className={`font-normal text-base md:text-lg text-black text-justify hyphens-auto`}>{cuotas}</p>)}
+
+                                    <div className="mt-3 pr-6 flex items-baseline gap-2">
+                                    {precio && (
+                                        <p className="font-bold text-xl md:text-2xl text-[#613DD2]">
+                                        {precio}
+                                        </p>
+                                    )}
+
+                                    {cuotas && (
+                                        <p className="font-normal text-base md:text-lg text-[#613DD2]">
+                                        {cuotas}
+                                        </p>
+                                    )}
                                     </div>
                                 </div>
                                 <p className={`relative w-full md:w-5/12 rounded-lg overflow-hidden mb-6 md:mb-0 transition-all ease-in-out duration-300 aspect-[16/9]`}>

@@ -5,18 +5,14 @@ import Link from 'next/link';
 import icono1 from 'public/images/des-intranet.png';
 import icono2 from 'public/images/app.png';
 import icono3 from 'public/images/web.png';
-import icono4 from 'public/images/dbicon.png';
-import icono5 from 'public/images/tienda.png';
 import icono6 from 'public/images/e-commerceapp.png';
 
 const Page = () => {
 
   const porquenosotros = [
-    { icono: icono1, titulo: 'Proveedores' },
+    { icono: icono1, titulo: 'Soporte Web Mensual' },
     { icono: icono2, titulo: 'Desarrollo de aplicaciones móviles' },
     { icono: icono3, titulo: 'Diseño de páginas web' },
-    { icono: icono4, titulo: 'Base de datos' },
-    { icono: icono5, titulo: 'Venta y suscripción de software' },
     { icono: icono6, titulo: 'E-commerce' },
   ];
 
@@ -91,9 +87,8 @@ const Page = () => {
 
               <div data-aos-once="true" data-aos='zoom-out' className={` max-w-3xl mx-auto pt-36 font-RobotoCondensed font-light text-center mt-5 w-full mb-0 text-lg sm:text-xl md:text-3xl lg:text-4xl text-black `} >
                 <p className={` opacity-60 leading-relaxed tracking-tight`}>
-                  <span className={` block whitespace-nowrap `}>Dedicados a ofrecer soluciones tecnológicas</span>
-                  <span className={` block whitespace-nowrap `}>innovadoras, diseñamos sitios web y apps móviles a</span>
-                  <span className={` block whitespace-nowrap `}>medida para alcanzar sus objetivos digitales.</span>
+                  <span className={` block whitespace-nowrap `}>Diseño web, apps y automatización inteligente para hacer</span>
+                  <span className={` block whitespace-nowrap `}>crecer tu negocio.</span>
                 </p>
                 <div data-aos-once="true" data-aos='flip-left'><hr className={`border-none  mt-5 block mx-auto bg-black bg-opacity-40 w-5 md:w-10 h-1 md:h-2 `} /></div>
                 <p className={` mt-5 text-[#402994] leading-relaxed  `} >
@@ -103,6 +98,9 @@ const Page = () => {
               <div data-aos-once="true" data-aos='fade-up' className={`mt-28 mb-52 py-8 rounded-md mx-auto max-w-5xl bg-black bg-opacity-15 `}>
 
                 <h3 className={` text-center mx-auto w-full text-3xl lg:text-4xl font-bold font-RobotoCondensed opacity-50 text-[#08153e] px-8 `}>Conócenos</h3>
+                <p className={` max-w-3xl indent-5 text-center hyphens-auto mx-auto mt-3 mb-6 text-lg md:text-xl lg:text-xl font-medium text-[#08153e] px-8 `}>
+                  Creamos soluciones modernas, rápidas y a medida para empresas que quieren vender más y trabajar mejor.
+                </p>
 
                 <p className={` pt-6 block text-center text-xl md:text-2xl lg:text-3xl font-medium font-Raleway text-[#08153e]  px-8 `} >
                   {[
@@ -171,16 +169,28 @@ const Page = () => {
             <p className={` max-w-2xl indent-5 text-left hyphens-auto mx-auto mt-3 mb-16 text-lg md:text-xl lg:text-xl font-medium `}>
               En Latasoft estamos orgullosos de ofrecer nuestros servicios para gran parte de Hispanoamerica, cada cliente es un pilar en nuestro día a día.</p>
 
-            {!!porquenosotros?.length && (
-              <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center text-lg lg:text-xl font-Roboto`}>
-                {porquenosotros.map((item, index) => (
-                  <div key={index} className={`p-4 `} data-aos-once="true" data-aos='fade'>
-                    <img src={item.icono.src} alt={item.titulo} className={`mx-auto mb-4 w-28 h-auto opacity-60 `} />
-                    <h3 className={`  font-medium font-RobotoCondensed text-black text-2xl lg:text-3xl `}>{item.titulo}</h3>
-                  </div>
-                ))}
-              </div>
-            )}
+          {!!porquenosotros?.length && (
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-flow-col lg:auto-cols-fr gap-8 text-center text-lg lg:text-xl font-Roboto">
+              {porquenosotros.map((item, index) => (
+                <div
+                  key={index}
+                  className="p-4"
+                  data-aos-once="true"
+                  data-aos="fade"
+                >
+                  <img
+                    src={item.icono.src}
+                    alt={item.titulo}
+                    className="mx-auto mb-4 w-28 h-auto opacity-60"
+                  />
+                  <h3 className="font-medium font-RobotoCondensed text-black text-2xl lg:text-3xl">
+                    {item.titulo}
+                  </h3>
+                </div>
+              ))}
+            </div>
+          )}
+
           </div>
         </section>
 

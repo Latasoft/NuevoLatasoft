@@ -10,40 +10,40 @@ const PortafolioComponent = () => {
 
     const logos = [
         { name: "Empresa 1", image: "/images/logo1.webp" },
-        { name: "Empresa 2", image: "/images/logo2.webp" },
-        { name: "Empresa 3", image: "/images/logo3.webp" },
-        { name: "Empresa 4", image: "/images/logo4.webp" },
-        { name: "Empresa 5", image: "/images/logo5.webp" },
-        { name: "Empresa 6", image: "/images/logo6.webp" },
-        { name: "Empresa 7", image: "/images/logo7.webp" },
+        { name: "Empresa 2", image: "/images/logo2.png" },
+        { name: "Empresa 3", image: "/images/logo3.png" },
+        { name: "Empresa 4", image: "/images/logo4.png" },
+        { name: "Empresa 5", image: "/images/logo5.png" },
+        { name: "Empresa 6", image: "/images/logo6.png" },
+        { name: "Empresa 7", image: "/images/logo7.png" },
         { name: "Empresa 8", image: "/images/logo8.png" },
-        { name: "Empresa 9", image: "/images/logo9.webp" },
-        { name: "Empresa 10", image: "/images/logo10.webp" }
+        { name: "Empresa 9", image: "/images/logo9.png" },
+        { name: "Empresa 10", image: "/images/logo10.png" }
     ];
 
 
     const slides = [
-        { image: "/images/cliente1.jpg" },
+        { image: "/images/cliente1.png" },
         { image: "/images/cliente2.png" },
         { image: "/images/cliente3.png" },
         { image: "/images/cliente4.webp" },
         { image: "/images/cliente5.png" },
         { image: "/images/cliente6.png" },
         { image: "/images/cliente7.png" },
-        { image: "/images/cliente8.jpg" },
+        { image: "/images/cliente8.png" },
         { image: "/images/cliente9.png" },
         { image: "/images/cliente10.png" },
-        { image: "/images/cliente11.jpg" },
+        { image: "/images/cliente11.png" },
         { image: "/images/cliente12.png" },
         { image: "/images/cliente13.png" },
         { image: "/images/cliente14.png" },
-        { image: "/images/cliente15.jpg" },
-        { image: "/images/cliente16.jpeg" },
-        { image: "/images/cliente17.jpeg" },
-        { image: "/images/cliente18.jpeg" },
-        { image: "/images/cliente19.jpeg" },
-        { image: "/images/cliente20.jpeg" },
-        { image: "/images/cliente21.jpeg" }
+        { image: "/images/cliente15.png" },
+        { image: "/images/cliente16.png" },
+        { image: "/images/cliente17.png" },
+        { image: "/images/cliente18.png" },
+        { image: "/images/cliente19.png" },
+        { image: "/images/cliente20.png" },
+        { image: "/images/cliente21.png" }
     ];
 
     // Nueva constante para el segundo slider
@@ -55,6 +55,7 @@ const PortafolioComponent = () => {
     ];
 
     const appSlides = [
+        
         { title: "Delfos ERP", image: "/images/app1.png" },
         { title: "Pizza hut", image: "/images/app2.png" },
         { title: "Findbox", image: "/images/app3.png" },
@@ -63,6 +64,11 @@ const PortafolioComponent = () => {
         { title: "SaludYa", image: "/images/app6.png" },
         { title: "Arenas y cayo", image: "/images/app7.png" },
         { title: "Barrio + F", image: "/images/app8.png" },
+        
+        // Apps acutalizados a la fecha 09/07/26
+        { title: "Autobox App", image: "/images/Autobox.png" },
+        { title: "App Quiddiya City Park", image: "/images/Quiddiya.png" },
+        { title: "App Rubro Naviero", image: "/images/Naviero.png" },
         // Agrega más proyectos según sea necesario
     ];
 
@@ -118,12 +124,22 @@ const PortafolioComponent = () => {
         { image: "/images/telolavo.jpeg", description: "Telolavo Carwash", link: "https://telolavo.onrender.com" },
                 { image: "/images/Sistema_de_lectura_RFID.jpeg", description: "Sistema de lectura RFID" }, // Usa la imagen del adjunto 1
         { image: "/images/Dragon_watch.jpeg", description: "Tienda de Smartwatchs"}, // Usa la imagen del adjunto 2
+        
+        // Proyectos acutalizados a la fecha 09/07/26
+        { image: "/images/discret.jpeg", description: "Discret", link: "https://discret.cl" },
+        { image: "/images/Buppypet.cl.jpeg", description: "Buppypet", link: "https://buppypet.cl" },
+        { image: "/images/invparedones.jpg", description: "InvParedones", link: "https://invparedones.cl" },
+        { image: "/images/Citysoccer.cl.jpeg", description: "Citysoccer", link: "https://Citysoccer.cl/" },
+        { image: "/images/Confiatour.netlify.app.jpeg", description: "Confiatour", link: "https://Confiatour.netlify.app/" },
+        { image: "/images/Confiaticket.cl.jpeg", description: "Confiaticket", link: "https://Confiaticket.cl/" },
+        { image: "/images/Confiatrade.cl.jpeg", description: "Confiatrade", link: "https://Confiatrade.cl/" },
+        { image: "/images/Confiaglobal.cl.jpg", description: "Confiaglobal.cl", link: "https://Confiaglobal.cl/" },
     ];
 
     // Intervalo para el slider de imágenes principales
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length); // Avanza entre las 21 imágenes
+            setCurrentSlide((prev) => (prev + 4) % slides.length); // Avanza entre las 21 imágenes
         }, 3000); // Cambia de imagen cada 3 segundos
         return () => clearInterval(interval);
     }, [slides.length]);
@@ -152,23 +168,32 @@ const PortafolioComponent = () => {
                 {/* Sección "Gracias por confiar en nosotros" */}
                 <section className={`relative pb-40 pt-40 px-8`}>
                     <div className={`absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-[url('/images/apretondemanos.png')]`} />
-                    <div className={`absolute top-0 left-0 w-full h-full bg-purple-700 bg-opacity-80`} />
+                    <div className={`absolute top-0 left-0 w-full h-full bg-black bg-opacity-50`} />
                     <div className={`absolute top-0 left-0 w-full h-full backdrop-grayscale-60`} />
 
                     <h2 data-aos-once="true" data-aos='fade' className={`relative text-3xl lg:text-4xl w-full text-center font-bold font-RobotoCondensed text-white transition-all ease-in-out duration-200 text-opacity-80 `}>
                         Gracias por confiar en nosotros
                     </h2>
                     {!!slides?.length && (
-                        <div className={`relative max-w-4xl mx-auto block w-full h-60 mt-16 `}>
-                            {slides.map((item, index) => (
-                                <div key={index}
-                                    className={`absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 max-w-xl h-full ${currentSlide === index ? 'opacity-100' : 'opacity-0'} transition-opacity ease-in-out duration-700`} >
-                                    <img src={item.image}
-                                        alt={`Slide ${index + 1}`}
-                                        className={` mx-auto h-full w-auto object-contain `}
-                                    />
-                                </div>
-                            ))}
+                        <div className="relative max-w-5xl mx-auto h-60 mt-16">
+                            <div className="absolute inset-0 flex justify-center items-center gap-10">
+                                {[0, 1, 2, 3].map((offset) => {
+                                    const item = slides[(currentSlide + offset) % slides.length];
+
+                                    return (
+                                        <div
+                                            key={offset}
+                                            className="w-40 md:w-52 lg:w-64 h-full flex items-center justify-center transition-all duration-700"
+                                        >
+                                            <img
+                                                src={item.image}
+                                                alt={`Cliente ${currentSlide + offset + 1}`}
+                                                className="max-h-full w-auto object-contain"
+                                            />
+                                        </div>
+                                    );
+                                })}
+                            </div>
                         </div>
                     )}
                     <div className={`relative max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center text-center mt-16 gap-6 md:gap-0`}>
@@ -179,7 +204,7 @@ const PortafolioComponent = () => {
 
                         {/* Texto 2 */}
                         <h3 data-aos-once="true" data-aos='fade' className={` tracking-tight text-4xl font-extralight font-RobotoCondensed`}>
-                            <span className={` text-4xl md:text-6xl `}>+30 webs</span> <br className={` hidden md:inline `} />creadas
+                            <span className={` text-4xl md:text-6xl `}>+40 webs</span> <br className={` hidden md:inline `} />creadas
                         </h3>
 
                         {/* Texto 3 */}
@@ -198,7 +223,7 @@ const PortafolioComponent = () => {
                 <section className={` relative bg-slate-50 -mt-48 pb-32 pt-40 px-8 `}>
 
                     <div className={`absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-[url('/images/proyecto-fondo-c.jpg')]`} />
-                    <div className={`absolute top-0 left-0 w-full h-full bg-[#00ffff] bg-opacity-70`} />
+                    <div className={`absolute top-0 left-0 w-full h-full bg-black bg-opacity-50`} />
                     <div className={`absolute top-0 left-0 w-full h-full backdrop-grayscale-60`} />
 
                     <div className={` relative container mx-auto text-center max-w-6xl pt-12 pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-6 lg:px-8 bg-black bg-opacity-20 rounded-lg `}>
@@ -268,7 +293,7 @@ const PortafolioComponent = () => {
                     {!!logos?.length && (
                         <div className={`max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 items-center justify-center px-6 lg:px-0`}>
                             {logos.map((logo, index) => (
-                                <div data-aos-once="true" data-aos='fade' key={index} className={`flex justify-center items-center bg-black aspect-square p-6`}>
+                                <div data-aos-once="true" data-aos='fade' key={index} className={`flex justify-center items-center aspect-square p-6`}>
                                     <img
                                         src={logo.image}
                                         alt={logo.name}

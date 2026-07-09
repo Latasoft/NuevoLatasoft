@@ -96,9 +96,9 @@ const NosotrosComponent = () => {
                 <section className={`relative bg-gray-800 z-40 text-white pt-40 pb-12 px-6`}>
                     <h2 data-aos-once="true" data-aos='fade' className={`text-[rgb(255,255,0)] text-center text-3xl lg:text-4xl mb-6 transition-all ease-in-out duration-200 font-bold font-RobotoCondensed `}>¿Quiénes somos?</h2>
                     <p data-aos-once="true" data-aos='fade' className={`text-justify hyphens-auto indent-8 max-w-5xl mx-auto text-lg md:text-xl lg:text-2xl transition-all ease-in-out duration-200 opacity-80 `} style={{ lineHeight: `1.86` }}>
-                        Somos una empresa de software factory y de aplicaciones centrada en y para los clientes,
-                        fundada en el 2021 en la ciudad de Viña Del Mar. Latasoft se creó para facultar a las empresas
-                        a que trabajen con mayor agilidad, mejor y con una tecnología más responsiva y cercana al usuario.
+                        Somos una empresa de desarrollo de software y aplicaciones, fundada en 2021 en Viña del Mar, 
+                        enfocada en crear soluciones tecnológicas a medida para nuestros clientes. Ayudamos a las empresas a optimizar procesos, 
+                        trabajar con mayor agilidad e impulsar su crecimiento mediante tecnología moderna y eficiente.
                     </p>
                 </section>
 
@@ -139,38 +139,13 @@ const NosotrosComponent = () => {
                 </section>
 
                 <section className={`relative bg-gray-800 z-40 text-white px-6 -mt-48 pt-12 pb-6`}>
-                    <h2 data-aos-once="true" data-aos='fade' className={`text-[rgb(255,255,0)] text-center mb-6 text-3xl lg:text-4xl transition-all ease-in-out duration-200 font-bold font-RobotoCondensed `} style={{ lineHeight: `1.38` }}>Innovación y Expansión para <br className={` inline sm:hidden `} />un Futuro Conocido</h2>
-                    <p data-aos-once="true" data-aos='fade' className={`text-justify hyphens-auto indent-8 max-w-5xl mx-auto text-lg md:text-xl lg:text-2xl transition-all ease-in-out duration-200 opacity-80 `} style={{ lineHeight: `1.86` }}>
-                        La vision del equipo de Latasoft es creer que cuando la tecnología se centra en las personas, maximiza el impacto de la organización en su industria, y en la sociedad en general. Nuestras flechas apuntan a ser siempre un referente de nuestra industria y con mirada de expansion, por lo que siempre trabajamos para que nuestros clientes logren sus objetivos, ya que sus objetivos se vuelven nuestros objetivos tambien. Como dice nuestra frase <span className={` font-NotoSerif italic `}>&quot;Por el mundo que no conocemos, pero conoceremos, Latasoft&quot;</span>.
-                    </p>
+                    <h2 data-aos-once="true" data-aos='fade' className={`text-white text-center mb-6 text-3xl lg:text-4xl transition-all ease-in-out duration-200 font-bold font-RobotoCondensed `} style={{ lineHeight: `1.38` }}>Hablemos de tu proyecto</h2>
                 </section>
 
                 <section className={`relative z-30 -translate-y-20`}  style={{ filter: 'drop-shadow(0 1rem 0.2rem rgb(0,0,0,0.2))' }}>
                     <div className={`transition-all ease-in-out duration-300 w-full h-48 bg-gray-800  [clip-path:_polygon(0_0,_100%_40%,_100%_100%,_0_60%)] `} />
                 </section>
 
-                {/* Sección del Slider */}
-                <section className={`relative h-[30rem] -mt-48 `}>
-
-                    {/* Imagen de fondo del slider */}
-                    <div className={`absolute top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat bg-[url('/images/apretondemanos.png')] `} />
-                    {/* Capas de color con opacidad */}
-                    <div className={`absolute top-0 left-0 w-full h-full bg-purple-500 bg-opacity-80`} />
-                    <div className={`absolute top-0 left-0 w-full h-full bg-black bg-opacity-50`} />
-
-                    {/* Contenido del slider */}
-                    {!!slides?.length && (
-                        <div className={` relative max-w-4xl mx-auto block w-full h-full `}>
-                            {slides.map((item, index) => (
-                                <div key={index} className={` absolute top-1/2 left-1/2 -translate-y-[calc(50%-3rem)] -translate-x-1/2 w-full h-auto text-white text-center font-Roboto text-xl lg:text-2xl ${currentSlide===index ? 'opacity-80': 'opacity-0'} transition-all ease-in-out duration-700 `}>
-                                    <p className={` mb-6 italic font-NotoSerif px-6 text-justify hyphens-auto indent-5 `} style={{ lineHeight: `1.62` }}>&quot;{item.text}&quot;</p>
-                                    <h3 className={` font-bold px-6 `}>{item.author}</h3>
-                                    <p className={` text-base lg:text-lg px-6 `} ><span className={` text-[rgb(255,255,0)] `} >{item.company}</span>, {item.location}.</p>
-                                </div>
-                            ))}
-                        </div>
-                    )}
-                </section>
 
             </main>
         </>
