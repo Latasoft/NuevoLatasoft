@@ -1,6 +1,12 @@
 "use client"; // Marcar el componente como Client Component
 import { useEffect, useState } from 'react';
 import NavigationBar from 'components/NavigationBar';
+import CasoExito from './casoExito';
+
+
+import { ArrowRight } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+import Link from 'next/link';
 
 const PortafolioComponent = () => {
 
@@ -213,7 +219,14 @@ const PortafolioComponent = () => {
                         </h3>
 
                     </div>
+
                 </section>
+                
+                <section>
+                     <CasoExito />
+                </section>
+
+
 
                 <section className={`relative z-40 -translate-y-20`} style={{ filter: 'drop-shadow(0 1rem 0.2rem rgb(0,0,0,0.2))' }}>
                     <div className={`transition-all ease-in-out duration-300 w-full h-48 bg-[#292929]  [clip-path:_polygon(0_0,_100%_40%,_100%_100%,_0_60%)] `} />
@@ -303,6 +316,71 @@ const PortafolioComponent = () => {
                             ))}
                         </div>
                     )}
+
+                    {/* Botón de contacto */}
+{/* CTA */}
+<div className="mt-36 mx-8 md:mx-0 text-center text-white">
+  <div
+    data-aos="fade"
+    data-aos-delay="200"
+    className="mt-10"
+  >
+    <Link
+      href="https://wa.me/56932555677"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="
+        group
+        inline-flex
+        items-center
+        gap-4
+        px-8
+        py-4
+        rounded-2xl
+        bg-zinc-900
+        border
+        border-zinc-700
+        hover:border-yellow-400
+        hover:bg-zinc-800
+        transition-all
+        duration-300
+        shadow-2xl
+      "
+    >
+      <div
+        className="
+          flex
+          items-center
+          justify-center
+          w-12
+          h-12
+          rounded-full
+          bg-[#25D366]
+          text-white
+          text-2xl
+          shadow-lg
+        "
+      >
+        <FaWhatsapp />
+      </div>
+
+      <div className="text-left">
+        <span className="block text-white font-semibold text-lg">
+          Hablemos de tu proyecto
+        </span>
+
+        <span className="block text-gray-400 text-sm">
+          Respuesta rápida por WhatsApp
+        </span>
+      </div>
+
+      <ArrowRight
+        size={22}
+        className="text-gray-400 group-hover:text-yellow-400 group-hover:translate-x-1 transition-all ml-2"
+      />
+    </Link>
+  </div>
+</div>
                 </section>
                 
             </main>
