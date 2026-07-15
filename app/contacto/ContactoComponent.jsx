@@ -88,7 +88,6 @@ const ContactoComponent = () => {
         </section>
         <section className={`relative mx-auto max-w-5xl pb-48 text-center text-white`}>
           <div data-aos-once="true" data-aos='fade' className={`grid gap-8 grid-cols-5 mt-28 mx-8 lg:mx-4`}>
-            <img src={banderaBrasil.src} alt="Bandera de Brasil" className={`w-full aspect-[11.45/7.63] opacity-70 `} />
             <img src={banderaChile.src} alt="Bandera de Chile" className={`w-full aspect-[11.45/7.63] opacity-70 `} />
             <img src={banderaPeru.src} alt="Bandera de Peru" className={`w-full aspect-[11.45/7.63] opacity-70 `} />
             <img src={banderaEspaña.src} alt="Bandera de España" className={`w-full aspect-[11.45/7.63] opacity-70 `} />
@@ -141,8 +140,7 @@ const ContactoComponent = () => {
 
               <h2 className={` text-lg md:text-xl font-bold mt-4 mb-2 text-left opacity-90 `} >Teléfonos</h2>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
-                <a href="tel:+56942978432">+569 4297 8432</a><br />
-                <a href="tel:+56991275137">+569 9127 5137</a>
+                <a href="tel:+56932555677">+56 9 3255 5677</a>
                 {/* testing */}
               </address>
 
