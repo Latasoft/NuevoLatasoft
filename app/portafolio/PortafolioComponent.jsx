@@ -140,7 +140,12 @@ const PortafolioComponent = () => {
         { image: "/images/Confiaticket.cl.jpeg", description: "Confiaticket", link: "https://Confiaticket.cl/" },
         { image: "/images/Confiatrade.cl.jpeg", description: "Confiatrade", link: "https://Confiatrade.cl/" },
         { image: "/images/Confiaglobal.cl.jpg", description: "Confiaglobal.cl", link: "https://Confiaglobal.cl/" },
+        { image: "/images/animalcoworking.jpeg", description: "Animal Coworking", link: "https://animalcoworking.cl" },
+        { image: "/images/piesegurochile.jpeg", description: "Pie Seguro Chile", link: "https://piesegurochile.cl" },
+        { image: "/images/mundooceano.jpeg", description: "Mundo Océano", link: "https://mundo-oceano-web.netlify.app" },
+        { image: "/images/estanquelleno.jpeg", description: "Estanque Lleno" },
     ];
+    
 
     // Intervalo para el slider de imágenes principales
     useEffect(() => {
