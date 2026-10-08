@@ -66,21 +66,31 @@ const ContactoComponent = () => {
         <section className={`relative mx-auto max-w-6xl text-center text-white`}>
           <div className={`mt-36 xl:mx-0 mx-4 transiton-all ease-in-out duration-300 `}>
             <h3 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed`}>Encuéntranos</h3>
-            <div data-aos-once="true" data-aos='fade' className={`grid gap-5 grid-cols-1 lg:grid-cols-3 mt-12 px-2 md:px-3 lg:px-5 bg-white bg-opacity-70 rounded-md `}>
-              <div className={` w-full py-2 md:py-3 lg:py-5 `}>
+            <div data-aos-once="true" data-aos='fade' className={`flex flex-wrap justify-center gap-5 mt-12 px-2 md:px-3 lg:px-5 bg-white bg-opacity-70 rounded-md `}>
+              <div className={` w-full lg:w-[31%] py-2 md:py-3 lg:py-5 `}>
                 <h4 className={` text-2xl pt-5 lg:pt-0 text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Casa Matriz</h4>
                 <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>12 Nte 785 oficina 406, <br className={` hidden lg:inline `} />Viña Del Mar.</p>
                 <iframe className={` w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20`} src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3369.3699734551374!2d-71.55002918435804!3d-33.01034029577017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDAwJzM5LjAiUyA3McKwMzInNTMuMSJX!5e0!3m2!1ses-419!2sus!4v1727751683097!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-              <div className={` w-fullpy-2 md:py-3 lg:py-5  `}>
+              <div className={` w-full lg:w-[31%] py-2 md:py-3 lg:py-5  `}>
                 <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Santo Domingo</h4>
                 <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Los Crisantemos 146,  <br className={` hidden lg:inline `} />Santo Domingo.</p>
                 <iframe className={` w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20 `} src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3321.4701206204895!2d-71.61025642458614!3d-33.64497860750033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDM4JzQxLjkiUyA3McKwMzYnMjcuNyJX!5e0!3m2!1ses-419!2sus!4v1727751453089!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-              <div className={` w-full py-2 md:py-3 lg:py-5 `}>
+              <div className={` w-full lg:w-[31%] py-2 md:py-3 lg:py-5 `}>
                 <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Santiago</h4>
                 <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Los Jesuitas 881 <br className={` hidden lg:inline `} />Providencia.</p>
                 <iframe className={` w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20 `} src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3329.192690350818!2d-70.62271922459637!3d-33.44428599719594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDI2JzM5LjUiUyA3MMKwMzcnMTIuNSJX!5e0!3m2!1ses-419!2sus!4v1727751340786!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div className={` w-full lg:w-[31%] py-2 md:py-3 lg:py-5 `}>
+                <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Alicante (España)</h4>
+                <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Av. Perfecto Palacio de la Fuente, 1, <br className={` hidden lg:inline `} />03001 Alicante, España.</p>
+                <iframe className={` w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20 `} src="https://maps.google.com/maps?q=Av.%20Perfecto%20Palacio%20de%20la%20Fuente%201%2C%2003001%20Alicante%2C%20Espa%C3%B1a&output=embed" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              <div className={` w-full lg:w-[31%] py-2 md:py-3 lg:py-5 `}>
+                <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Ciudad de México (México)</h4>
+                <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Av. Álvaro Obregón 213, <br className={` hidden lg:inline `} />Roma Nte, CDMX.</p>
+                <iframe className={` w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20 `} src="https://maps.google.com/maps?q=Av.%20%C3%81lvaro%20Obreg%C3%B3n%20213%2C%20Roma%20Norte%2C%20Ciudad%20de%20M%C3%A9xico&output=embed" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
             </div>
           </div>
@@ -128,6 +138,16 @@ const ContactoComponent = () => {
               <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina Santiago</h3>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
                 Los Jesuitas 881, Providencia.
+              </address>
+              
+              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina España</h3>
+              <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
+                Av. Perfecto Palacio de la Fuente, 1, Alicante, España.
+              </address>
+
+              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina México</h3>
+              <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
+                Av. Álvaro Obregón 213, Roma Nte, CDMX.
               </address>
 
             </div>
