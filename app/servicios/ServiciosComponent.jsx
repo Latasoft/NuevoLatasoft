@@ -24,6 +24,15 @@ const ServiciosComponent = () => {
             imagen: imagenServicios01
         },
         {
+            id: 'Integraciones',
+            fondoCart: serviciosbgB,
+            fondocolor: 'bg-[#FFFF00]',
+            titulo: 'Integraciones',
+            precio: 'Desde $159.990',
+            descripcion: 'Conectamos tu negocio con CRM, sistemas de gestión, plataformas de pago, reservas, ecommerce, WhatsApp y otras herramientas empresariales. Valor final según plataformas, alcance y complejidad de la integración. Áreas que podemos integrar: CRM · ERP · Pagos · Ecommerce · WMS · Logística · GPS & Flotas · Residuos · Inventario · RRHH · BI · IoT · Automatización · IA',
+            imagen: imagenServicios01
+        },
+        {
             id: 'Web_Care_Pro',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#613DD2]',

@@ -6,6 +6,7 @@ import icono1 from 'public/images/des-intranet.png';
 import icono2 from 'public/images/app.png';
 import icono3 from 'public/images/web.png';
 import icono6 from 'public/images/e-commerceapp.png';
+import icono7 from 'public/images/integraciones.png';
 
 import { ArrowRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -17,6 +18,7 @@ const Page = () => {
     { icono: icono2, titulo: 'Desarrollo de aplicaciones móviles' },
     { icono: icono3, titulo: 'Diseño de páginas web' },
     { icono: icono6, titulo: 'E-commerce' },
+    { icono: icono7, titulo: 'Integraciones' },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -173,11 +175,11 @@ const Page = () => {
               En Latasoft estamos orgullosos de ofrecer nuestros servicios para gran parte de Hispanoamerica, cada cliente es un pilar en nuestro día a día.</p>
 
           {!!porquenosotros?.length && (
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-flow-col lg:auto-cols-fr gap-8 text-center text-lg lg:text-xl font-Roboto">
+            <div className="flex flex-wrap justify-center gap-8 text-center text-lg lg:text-xl font-Roboto">
               {porquenosotros.map((item, index) => (
                 <div
                   key={index}
-                  className="p-4"
+                  className="p-4 w-full md:w-[30%]"
                   data-aos-once="true"
                   data-aos="fade"
                 >
