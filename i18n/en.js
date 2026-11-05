@@ -22,7 +22,7 @@ const en = {
   "Dejando una huella con": "Making an impact with",
   "cada cliente": "every client",
   "Nuestros servicios": "Our services",
-  "En Latasoft estamos orgullosos de ofrecer nuestros servicios para gran parte de Hispanoamerica, cada cliente es un pilar en nuestro día a día.": "At Latasoft we are proud to serve clients across much of Latin America and Spain; every client is a cornerstone of our daily work.",
+  "En Latasoft estamos orgullosos de ofrecer nuestros servicios para gran parte de Hispanoamerica, cada cliente es un pilar en nuestro día a día.": "At Latasoft we are proud to serve clients across much of Spanish-speaking Latin America; every client is a cornerstone of our daily work.",
   "Soporte Web Mensual": "Monthly Web Support",
   "Desarrollo de aplicaciones móviles": "Mobile app development",
   "Diseño de páginas web": "Website design",
