@@ -8,9 +8,11 @@ import serviciosbgB from 'public/images/serviciosbgB.jpg';
 import serviciosbgC from 'public/images/serviciosbg.jpg';
 
 import ServicioCard from './ServicioCard';
+import { useT } from 'components/LanguageContext';
 
 
 const ServiciosComponent = () => {
+    const t = useT();
 
     const ServiciosCards = [
         {
@@ -149,10 +151,10 @@ const ServiciosComponent = () => {
                             key={index}
                             fondoCart={item.fondoCart}
                             fondocolor={item.fondocolor}
-                            titulo={item.titulo}
-                            precio={item.precio}
-                            cuotas={item.cuotas}
-                            descripcion={item.descripcion}
+                            titulo={t(item.titulo)}
+                            precio={t(item.precio)}
+                            cuotas={t(item.cuotas)}
+                            descripcion={t(item.descripcion)}
                             imagen={item.imagen} />
                     ))}
                 </>

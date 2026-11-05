@@ -10,8 +10,11 @@ import icono7 from 'public/images/integraciones.png';
 
 import { ArrowRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import LanguageSwitcher from 'components/LanguageSwitcher';
+import { useT } from 'components/LanguageContext';
 
 const Page = () => {
+  const t = useT();
 
   const porquenosotros = [
     { icono: icono1, titulo: 'Soporte Web Mensual' },
@@ -71,10 +74,14 @@ const Page = () => {
         <section className={`relative w-full z-30  [filter:_drop-shadow(0_1rem_0.2rem_rgb(0,0,0,0.2))]`}>
 
           <div className={`relative flex flex-col items-center justify-center h-48 bg-gray-800 [clip-path:_polygon(0_0,100%_0,100%_100%,0_calc(100%_-_2.62rem))] `}>
+            {/* Botones de idioma (el Inicio no tiene menú arriba) */}
+            <div className={`absolute top-4 right-4 z-10`}>
+              <LanguageSwitcher />
+            </div>
             <h1 data-aos-once="true" data-aos='fade' className={` relative block text-center w-full transition-all ease-in-out duration-200 `}>
               <span className={` block whitespace-nowrap font-Rubik text-5xl lg:text-7xl font-extrabold uppercase text-[rgb(255,255,0)] `}>Latasoft</span>
               <span className={` hidden `}> | </span>
-              <span className={` block whitespace-nowrap mt-0 mb-8 text-white font-RobotoCondensed text-lg md:text-2xl text-opacity-70 `}>Desarrollo Web y Móvil</span>
+              <span className={` block whitespace-nowrap mt-0 mb-8 text-white font-RobotoCondensed text-lg md:text-2xl text-opacity-70 `}>{t('Desarrollo Web y Móvil')}</span>
             </h1>
           </div>
       
@@ -92,19 +99,19 @@ const Page = () => {
 
               <div data-aos-once="true" data-aos='zoom-out' className={` max-w-3xl mx-auto pt-36 font-RobotoCondensed font-light text-center mt-5 w-full mb-0 text-lg sm:text-xl md:text-3xl lg:text-4xl text-black `} >
                 <p className={` opacity-60 leading-relaxed tracking-tight`}>
-                  <span className={` block whitespace-nowrap `}>Diseño web, apps y automatización inteligente para hacer</span>
-                  <span className={` block whitespace-nowrap `}>crecer tu negocio.</span>
+                  <span className={` block whitespace-nowrap `}>{t('Diseño web, apps y automatización inteligente para hacer')}</span>
+                  <span className={` block whitespace-nowrap `}>{t('crecer tu negocio.')}</span>
                 </p>
                 <div data-aos-once="true" data-aos='flip-left'><hr className={`border-none  mt-5 block mx-auto bg-black bg-opacity-40 w-5 md:w-10 h-1 md:h-2 `} /></div>
                 <p className={` mt-5 text-[#402994] leading-relaxed  `} >
-                  Tu idea es nuestro código fuente.
+                  {t('Tu idea es nuestro código fuente.')}
                 </p>
               </div>
               <div data-aos-once="true" data-aos='fade-up' className={`mt-28 mb-52 py-8 rounded-md mx-auto max-w-5xl bg-black bg-opacity-15 `}>
 
-                <h3 className={` text-center mx-auto w-full text-3xl lg:text-4xl font-bold font-RobotoCondensed opacity-50 text-[#08153e] px-8 `}>Conócenos</h3>
+                <h3 className={` text-center mx-auto w-full text-3xl lg:text-4xl font-bold font-RobotoCondensed opacity-50 text-[#08153e] px-8 `}>{t('Conócenos')}</h3>
                 <p className={` max-w-3xl indent-5 text-center hyphens-auto mx-auto mt-3 mb-6 text-lg md:text-xl lg:text-xl font-medium text-[#08153e] px-8 `}>
-                  Creamos soluciones modernas, rápidas y a medida para empresas que quieren vender más y trabajar mejor.
+                  {t('Creamos soluciones modernas, rápidas y a medida para empresas que quieren vender más y trabajar mejor.')}
                 </p>
 
                 <p className={` pt-6 block text-center text-xl md:text-2xl lg:text-3xl font-medium font-Raleway text-[#08153e]  px-8 `} >
@@ -115,7 +122,7 @@ const Page = () => {
                     { href: '/contacto', label: 'Contacto' }
                   ].map((link, index, array) => (
                     <span key={link.href}>
-                      <a className={` cursor-pointer py-2 md:py-0 block md:inline-block border-b-2 border-transparent hover:border-solid hover:border-b-2 hover:border-black transition-transform ease-in-out duration-300 `} href={link.href}>{link.label}</a>
+                      <a className={` cursor-pointer py-2 md:py-0 block md:inline-block border-b-2 border-transparent hover:border-solid hover:border-b-2 hover:border-black transition-transform ease-in-out duration-300 `} href={link.href}>{t(link.label)}</a>
                       {index < array.length - 1 && (
                         <span className="hidden md:inline mx-5">•</span>
                       )}
@@ -149,10 +156,10 @@ const Page = () => {
                 {slides.map((item, index) => (
                   <div key={index} className={` absolute top-[19rem] md:top-[14rem] left-0 -translate-y-1/2 text-white text-center font-Roboto text-xl lg:text-2xl ${currentSlide === index ? 'opacity-80' : 'opacity-0'} transition-all ease-in-out duration-700 `}>
                     <div className={`  w-full h-full flex flex-col justify-center items-center `}>
-                      <h3 className={` relative text-center mx-auto w-full text-white mb-6 text-3xl lg:text-4xl font-bold font-RobotoCondensed opacity-60 `}>Dejando una huella con<br className={` inline md:hidden `} /> cada cliente</h3>
-                      <p className={` mb-6 italic font-NotoSerif px-6 text-justify indent-5 hyphens-auto`} style={{ lineHeight: `1.62` }}>&quot;{item.text}&quot;</p>
+                      <h3 className={` relative text-center mx-auto w-full text-white mb-6 text-3xl lg:text-4xl font-bold font-RobotoCondensed opacity-60 `}>{t('Dejando una huella con')}<br className={` inline md:hidden `} /> {t('cada cliente')}</h3>
+                      <p className={` mb-6 italic font-NotoSerif px-6 text-justify indent-5 hyphens-auto`} style={{ lineHeight: `1.62` }}>&quot;{t(item.text)}&quot;</p>
                       <h3 className={` font-bold px-6 `}>{item.author}</h3>
-                      <p className={` text-base lg:text-lg px-6 `} ><span className={` text-[rgb(255,255,0)] `} >{item.company}</span>, {item.location}.</p>
+                      <p className={` text-base lg:text-lg px-6 `} ><span className={` text-[rgb(255,255,0)] `} >{item.company}</span>, {t(item.location)}.</p>
                     </div>
                   </div>
                 ))}
@@ -169,10 +176,10 @@ const Page = () => {
 
           <div className={`relative z-10 mx-auto max-w-5xl text-black text-opacity-80 bg-white bg-opacity-50 rounded-md py-12 px-4`}>
             <h2 className={`text-[rgb(46,46,46)] text-center text-3xl lg:text-4xl transition-all ease-in-out duration-200 font-bold font-RobotoCondensed`}>
-              Nuestros servicios
+              {t('Nuestros servicios')}
             </h2>
             <p className={` max-w-2xl indent-5 text-left hyphens-auto mx-auto mt-3 mb-16 text-lg md:text-xl lg:text-xl font-medium `}>
-              En Latasoft estamos orgullosos de ofrecer nuestros servicios para gran parte de Hispanoamerica, cada cliente es un pilar en nuestro día a día.</p>
+              {t('En Latasoft estamos orgullosos de ofrecer nuestros servicios para gran parte de Hispanoamerica, cada cliente es un pilar en nuestro día a día.')}</p>
 
           {!!porquenosotros?.length && (
             <div className="flex flex-wrap justify-center gap-8 text-center text-lg lg:text-xl font-Roboto">
@@ -185,11 +192,11 @@ const Page = () => {
                 >
                   <img
                     src={item.icono.src}
-                    alt={item.titulo}
+                    alt={t(item.titulo)}
                     className="mx-auto mb-4 w-28 h-auto opacity-60"
                   />
                   <h3 className="font-medium font-RobotoCondensed text-black text-2xl lg:text-3xl">
-                    {item.titulo}
+                    {t(item.titulo)}
                   </h3>
                 </div>
               ))}
@@ -246,11 +253,11 @@ const Page = () => {
 
       <div className="text-left">
         <span className="block text-white font-semibold text-lg">
-          Hablemos de tu proyecto
+          {t('Hablemos de tu proyecto')}
         </span>
 
         <span className="block text-gray-400 text-sm">
-          Respuesta rápida por WhatsApp
+          {t('Respuesta rápida por WhatsApp')}
         </span>
       </div>
 

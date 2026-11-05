@@ -7,8 +7,10 @@ import CasoExito from './casoExito';
 import { ArrowRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from 'next/link';
+import { useT } from 'components/LanguageContext';
 
 const PortafolioComponent = () => {
+    const t = useT();
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [currentProjectSlide, setCurrentProjectSlide] = useState(0);
@@ -197,7 +199,7 @@ const PortafolioComponent = () => {
                     <div className={`absolute top-0 left-0 w-full h-full backdrop-grayscale-60`} />
 
                     <h2 data-aos-once="true" data-aos='fade' className={`relative text-3xl lg:text-4xl w-full text-center font-bold font-RobotoCondensed text-white transition-all ease-in-out duration-200 text-opacity-80 `}>
-                        Gracias por confiar en nosotros
+                        {t('Gracias por confiar en nosotros')}
                     </h2>
                     {!!slides?.length && (
                         <div className="relative max-w-5xl mx-auto h-60 mt-16">
@@ -224,17 +226,17 @@ const PortafolioComponent = () => {
                     <div className={`relative max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center text-center mt-16 gap-6 md:gap-0`}>
                         {/* Texto 1 */}
                         <h3 data-aos-once="true" data-aos='fade' className={` tracking-tight text-4xl font-extralight font-RobotoCondensed`}>
-                            <span className={` text-4xl md:text-6xl `}>+5 años</span> <br className={` hidden md:inline `} /> de experiencia
+                            <span className={` text-4xl md:text-6xl `}>{t('+5 años')}</span> <br className={` hidden md:inline `} /> {t('de experiencia')}
                         </h3>
 
                         {/* Texto 2 */}
                         <h3 data-aos-once="true" data-aos='fade' className={` tracking-tight text-4xl font-extralight font-RobotoCondensed`}>
-                            <span className={` text-4xl md:text-6xl `}>+40 webs</span> <br className={` hidden md:inline `} />creadas
+                            <span className={` text-4xl md:text-6xl `}>{t('+40 webs')}</span> <br className={` hidden md:inline `} />{t('creadas')}
                         </h3>
 
                         {/* Texto 3 */}
                         <h3 data-aos-once="true" data-aos='fade' className={` tracking-tight text-4xl font-extralight font-RobotoCondensed`}>
-                            <span className={` text-4xl md:text-6xl `}>+10 apps</span> <br className={` hidden md:inline `} />creadas
+                            <span className={` text-4xl md:text-6xl `}>{t('+10 apps')}</span> <br className={` hidden md:inline `} />{t('creadas')}
                         </h3>
 
                     </div>
@@ -260,7 +262,7 @@ const PortafolioComponent = () => {
 
                     <div className={` relative container mx-auto text-center max-w-6xl pt-12 pb-4 sm:pb-6 lg:pb-8 px-4 sm:px-6 lg:px-8 bg-black bg-opacity-20 rounded-lg `}>
                         <h2 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold text-[rgb(29,29,29)] font-RobotoCondensed mb-12`}>
-                            Proyectos
+                            {t('Proyectos')}
                         </h2>
 
                         <div className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 `}>
@@ -270,9 +272,9 @@ const PortafolioComponent = () => {
                                     <div className={` relative w-full h-full transition-all ease-linear duration-300 backdrop-grayscale-100 hover:backdrop-grayscale-0 `}>
                                         <div className={` relative w-full h-full bg-cover bg-center bg-white bg-opacity-40 hover:bg-opacity-0 transition-all ease-linear duration-300 `}>
                                             <div className={`absolute block bottom-0 left-0 w-full`}>
-                                                <p className={`block bg-black bg-opacity-70 mx-0 pt-4 px-2 text-[#FFFFAA] text-2xl font-RobotoCondensed font-medium `}>{card.description}</p>
+                                                <p className={`block bg-black bg-opacity-70 mx-0 pt-4 px-2 text-[#FFFFAA] text-2xl font-RobotoCondensed font-medium `}>{t(card.description)}</p>
                                                 <p className={`block bg-black bg-opacity-70 mb-0 mx-0 pb-6 px-2 font-medium `} ><a href={card.link} target="_blank" className={`text-white hover:underline `}>
-                                                    Ver página</a></p>
+                                                    {t('Ver página')}</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -294,9 +296,9 @@ const PortafolioComponent = () => {
                     <div className={`absolute top-0 left-0 w-full h-full backdrop-grayscale-50`} />
 
                     <h2 data-aos-once="true" data-aos='fade' className={`relative mx-auto max-w-5xl text-center text-3xl lg:text-4xl font-bold text-black font-RobotoCondensed `}>
-                        Algunas Apps que realizamos
+                        {t('Algunas Apps que realizamos')}
                     </h2>
-                    <p data-aos-once="true" data-aos='fade' className={`relative mx-auto max-w-5xl text-center text-lg lg:text-xl font-medium text-black font-Roboto mt-2 `}>Explora algunos de nuestros desarrollos de aplicaciones moviles a continuación.</p>
+                    <p data-aos-once="true" data-aos='fade' className={`relative mx-auto max-w-5xl text-center text-lg lg:text-xl font-medium text-black font-Roboto mt-2 `}>{t('Explora algunos de nuestros desarrollos de aplicaciones moviles a continuación.')}</p>
 
                     {/* Slider de aplicaciones */}
 
@@ -319,10 +321,10 @@ const PortafolioComponent = () => {
                 {/* Sección "Software a Medida" */}
                 <section className={`relative bg-white pt-20 pb-40 px-8`}>
                     <h2 data-aos-once="true" data-aos='fade' className={`mx-auto max-w-5xl text-center text-3xl lg:text-4xl font-bold text-black font-RobotoCondensed`}>
-                        Software a Medida
+                        {t('Software a Medida')}
                     </h2>
                     <p data-aos-once="true" data-aos='fade' className={`mx-auto max-w-5xl text-center text-lg lg:text-xl font-medium text-gray-700 font-Roboto mt-2`}>
-                        Empresas e instituciones para las que hemos desarrollado soluciones a medida.
+                        {t('Empresas e instituciones para las que hemos desarrollado soluciones a medida.')}
                     </p>
 
                     {!!softwareMedidaLogos?.length && (
@@ -345,7 +347,7 @@ const PortafolioComponent = () => {
                 </section>
 
                 <section className={`relative z-40 -mt-48 bg-gray-800 pb-32 pt-10 `}>
-                    <h2 data-aos-once="true" data-aos='fade' className={`max-w-5xl mx-auto text-3xl lg:text-4xl font-bold font-RobotoCondensed mb-12 text-center opacity-80 `}>Organizaciones que<br className={` inline md:hidden `}/> confían en nosotros</h2>
+                    <h2 data-aos-once="true" data-aos='fade' className={`max-w-5xl mx-auto text-3xl lg:text-4xl font-bold font-RobotoCondensed mb-12 text-center opacity-80 `}>{t('Organizaciones que')}<br className={` inline md:hidden `}/> {t('confían en nosotros')}</h2>
 
                     {!!logos?.length && (
                         <div className={`max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 items-center justify-center px-6 lg:px-0`}>
@@ -410,11 +412,11 @@ const PortafolioComponent = () => {
 
       <div className="text-left">
         <span className="block text-white font-semibold text-lg">
-          Hablemos de tu proyecto
+          {t('Hablemos de tu proyecto')}
         </span>
 
         <span className="block text-gray-400 text-sm">
-          Respuesta rápida por WhatsApp
+          {t('Respuesta rápida por WhatsApp')}
         </span>
       </div>
 

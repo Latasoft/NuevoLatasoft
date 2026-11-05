@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ArrowRight, X } from 'lucide-react';
+import { useT } from 'components/LanguageContext';
 
 const casosExito = [
     {
@@ -41,12 +42,13 @@ const casosExito = [
 
 export default function CasosExito() {
     const [casoSeleccionado, setCasoSeleccionado] = useState(null);
+    const t = useT();
 
     return (
         <>
             <section className="max-w-7xl mx-auto px-6 py-20">
                 <div className="text-center mb-14">
-                    <h2 className="text-3xl md:text-4xl font-bold text-white">Casos de éxito</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold text-white">{t('Casos de éxito')}</h2>
                 </div>
 
                 <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
@@ -64,22 +66,22 @@ export default function CasosExito() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                                 <div className="absolute bottom-6 left-6 right-6">
                                     <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#8bc34a] bg-white/90 px-3 py-1 rounded-full mb-3">
-                                        Caso de éxito
+                                        {t('Caso de éxito')}
                                     </span>
                                     <h3 className="text-3xl font-bold text-white">{caso.empresa}</h3>
                                 </div>
                             </div>
 
                             <div className="p-7">
-                                <h4 className="text-xl font-bold text-slate-900">{caso.titulo}</h4>
-                                <p className="mt-4 text-slate-600 leading-relaxed">{caso.resumen}</p>
+                                <h4 className="text-xl font-bold text-slate-900">{t(caso.titulo)}</h4>
+                                <p className="mt-4 text-slate-600 leading-relaxed">{t(caso.resumen)}</p>
                                 <div className="flex flex-wrap gap-2 mt-6">
                                     {caso.tags.map((tag) => (
                                         <span
                                             key={tag}
                                             className="px-3 py-1 rounded-full bg-[#8bc34a]/10 text-[#6fa126] text-sm font-medium"
                                         >
-                                            {tag}
+                                            {t(tag)}
                                         </span>
                                     ))}
                                 </div>
@@ -87,7 +89,7 @@ export default function CasosExito() {
                                     onClick={() => setCasoSeleccionado(caso)}
                                     className="mt-8 inline-flex items-center gap-2 font-semibold text-[#8bc34a] hover:gap-4 transition-all"
                                 >
-                                    Ver caso completo <ArrowRight size={18} />
+                                    {t('Ver caso completo')} <ArrowRight size={18} />
                                 </button>
                             </div>
                         </article>
@@ -101,10 +103,10 @@ export default function CasosExito() {
                         <div className="flex justify-between items-center border-b p-8">
                             <div>
                                 <p className="text-sm uppercase tracking-widest text-[#8bc34a] font-semibold">
-                                    Caso de éxito
+                                    {t('Caso de éxito')}
                                 </p>
                                 <h2 className="text-3xl font-bold mt-2">{casoSeleccionado.empresa}</h2>
-                                <p className="text-slate-500 mt-2">{casoSeleccionado.titulo}</p>
+                                <p className="text-slate-500 mt-2">{t(casoSeleccionado.titulo)}</p>
                             </div>
                                 <button
                                     onClick={() => setCasoSeleccionado(null)}
@@ -125,12 +127,12 @@ export default function CasosExito() {
                                         key={tag}
                                         className="px-3 py-1 rounded-full bg-[#8bc34a]/10 text-[#6fa126] text-sm font-medium"
                                     >
-                                        {tag}
+                                        {t(tag)}
                                     </span>
                                 ))}
                             </div>
                             <p className="text-slate-700 leading-8 whitespace-pre-line">
-                                {casoSeleccionado.descripcion}
+                                {t(casoSeleccionado.descripcion)}
                             </p>
                         </div>
                     </div>

@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
+import LanguageSwitcher from 'components/LanguageSwitcher';
+import { useT } from 'components/LanguageContext';
 
 const navItems = [
   { linkText: 'Inicio', href: '/' },
@@ -14,6 +16,7 @@ const navItems = [
 
 const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useT();
 
   const closeMenu = () => setIsOpen(false);
 
@@ -50,20 +53,27 @@ const NavigationBar = () => {
                   href={item.href}
                   className="font-Raleway text-white text-base lg:text-lg opacity-80 hover:opacity-100 transition-all"
                 >
-                  {item.linkText}
+                  {t(item.linkText)}
                 </Link>
               </li>
             ))}
+            {/* Botones de idioma (escritorio) */}
+            <li>
+              <LanguageSwitcher />
+            </li>
           </ul>
 
-          {/* Botón hamburguesa */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-yellow-400"
-            aria-label="Abrir menú"
-          >
-            {isOpen ? <X size={32} /> : <Menu size={32} />}
-          </button>
+          {/* Celular: botones de idioma + botón hamburguesa */}
+          <div className="md:hidden flex items-center gap-3">
+            <LanguageSwitcher />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-yellow-400"
+              aria-label={t('Abrir menú')}
+            >
+              {isOpen ? <X size={32} /> : <Menu size={32} />}
+            </button>
+          </div>
         </div>
 
         {/* Menú móvil */}
@@ -95,7 +105,7 @@ const NavigationBar = () => {
                     transition-all
                   "
                 >
-                  {item.linkText}
+                  {t(item.linkText)}
                 </Link>
               </li>
             ))}
