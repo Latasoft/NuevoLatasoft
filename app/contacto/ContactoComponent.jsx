@@ -1,5 +1,6 @@
 'use client';
-import { useT } from 'components/LanguageContext';
+import { useT, useLang } from 'components/LanguageContext';
+import ContactFormEN from 'components/ContactFormEN';
 import instagramIcon from 'public/images/instagram.png';
 import whatsappIcon from 'public/images/wsp.png';
 import banderaChile from 'public/images/b-ch.webp';
@@ -12,6 +13,7 @@ import Link from 'next/link';
 
 const ContactoComponent = () => {
   const t = useT();
+  const { lang } = useLang();
   return (
     <>
       <NavigationBar />
@@ -66,6 +68,15 @@ const ContactoComponent = () => {
           </div>
 
         </section>
+        {/* Formulario de contacto: solo en la versión en inglés */}
+        {lang === 'en' && (
+          <section className={`relative mx-auto max-w-5xl text-center text-white`}>
+            <div className={`mt-36 mx-4 lg:mx-0`}>
+              <h3 className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed mb-12`}>Send us a message</h3>
+              <ContactFormEN />
+            </div>
+          </section>
+        )}
         <section className={`relative mx-auto max-w-6xl text-center text-white`}>
           <div className={`mt-36 xl:mx-0 mx-4 transiton-all ease-in-out duration-300 `}>
             <h3 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed`}>{t('Encuéntranos')}</h3>
