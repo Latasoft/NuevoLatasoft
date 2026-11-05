@@ -3,9 +3,10 @@
 // Formulario de contacto. Solo se muestra en la versión en inglés (lo pidió Nicolás).
 import { useState } from 'react';
 
-// Dirección a la que se envían los datos del formulario.
-// PENDIENTE: definir con Latasoft el correo de destino y el servicio de envío.
-const FORM_ENDPOINT = '';
+// Los mensajes se envían con Web3Forms (cuenta latasoftweb@gmail.com).
+// El access key es público: Web3Forms lo diseñó para ir en el código de la página.
+const FORM_ENDPOINT = 'https://api.web3forms.com/submit';
+const ACCESS_KEY = 'a176e282-d1b8-4b37-945a-32a62fccfc8b';
 
 const countries = [
   'Chile',
@@ -51,19 +52,30 @@ const ContactFormEN = () => {
       return;
     }
 
-    if (!FORM_ENDPOINT) {
-      setStatus('error');
-      return;
-    }
+    // Datos que llegan en el correo (las casillas de servicios se juntan en una línea)
+    const payload = {
+      access_key: ACCESS_KEY,
+      subject: 'New contact form message (English website)',
+      from_name: 'Latasoft website',
+      Name: data.get('name'),
+      Company: data.get('company'),
+      Email: data.get('email'),
+      Phone: data.get('phone'),
+      Country: data.get('country'),
+      'Budget (USD)': data.get('budget'),
+      Services: data.getAll('service').join(', '),
+      botcheck: data.get('botcheck') ? true : undefined,
+    };
 
     setStatus('sending');
     try {
       const res = await fetch(FORM_ENDPOINT, {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error('Request failed');
+      const result = await res.json();
+      if (!result.success) throw new Error(result.message || 'Request failed');
       form.reset();
       setStatus('sent');
     } catch (err) {
@@ -85,6 +97,8 @@ const ContactFormEN = () => {
       onSubmit={handleSubmit}
       className="bg-white bg-opacity-90 rounded-md p-6 md:p-10 text-left grid grid-cols-1 md:grid-cols-2 gap-6"
     >
+      {/* Campo oculto contra spam: las personas no lo ven, los robots sí lo llenan */}
+      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
       <div>
         <label htmlFor="cf-name" className={labelClass}>Name *</label>
         <input id="cf-name" name="name" type="text" required autoComplete="name" className={inputClass} />
