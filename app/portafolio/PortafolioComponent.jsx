@@ -77,6 +77,20 @@ const PortafolioComponent = () => {
         { title: "App Rubro Naviero", image: "/images/Naviero.png" },
         // Agrega más proyectos según sea necesario
     ];
+    
+    // Logos de la sección "Software a Medida"
+    const softwareMedidaLogos = [
+        { name: "Policía de Investigaciones de Chile", image: "/images/medida-pdi.webp" },
+        { name: "Masisa", image: "/images/medida-masisa.webp" },
+        { name: "Codelco Ventanas", image: "/images/medida-codelco.webp" },
+        { name: "Pontificia Universidad Católica de Valparaíso", image: "/images/medida-pucv.webp" },
+        { name: "Duoc UC Escuela de Construcción", image: "/images/medida-duoc.webp" },
+        { name: "Ministerio de Salud de El Salvador", image: "/images/medida-minsal-sv.webp" },
+        { name: "Grupo 7 Palms Resorts Punta Cana", image: "/images/medida-7palms.webp" },
+        { name: "University Canada West", image: "/images/medida-ucw.webp" },
+        // Agrega más logos aquí
+    ];
+
 
     // Nueva constante para las tarjetas
     const portafolioCards = [
@@ -299,6 +313,31 @@ const PortafolioComponent = () => {
                         </div>
                     )}
 
+                </section>
+
+                
+                {/* Sección "Software a Medida" */}
+                <section className={`relative bg-white pt-20 pb-40 px-8`}>
+                    <h2 data-aos-once="true" data-aos='fade' className={`mx-auto max-w-5xl text-center text-3xl lg:text-4xl font-bold text-black font-RobotoCondensed`}>
+                        Software a Medida
+                    </h2>
+                    <p data-aos-once="true" data-aos='fade' className={`mx-auto max-w-5xl text-center text-lg lg:text-xl font-medium text-gray-700 font-Roboto mt-2`}>
+                        Empresas e instituciones para las que hemos desarrollado soluciones a medida.
+                    </p>
+
+                    {!!softwareMedidaLogos?.length && (
+                        <div className={`max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-12`}>
+                            {softwareMedidaLogos.map((logo, index) => (
+                                <div data-aos-once="true" data-aos='fade' key={index} className={`flex items-center justify-center bg-white rounded-xl shadow-md p-3 aspect-[2/1]`}>
+                                    <img
+                                        src={logo.image}
+                                        alt={logo.name}
+                                        className={`w-full h-full object-contain`}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </section>
 
                 <section className={`relative z-30 -translate-y-20`}> {/*  style={{ filter: 'drop-shadow(0 1rem 0.2rem rgb(0,0,0,0.2))' }} */}
