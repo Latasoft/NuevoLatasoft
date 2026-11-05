@@ -85,6 +85,9 @@ const PortafolioComponent = () => {
         { name: "Codelco Ventanas", image: "/images/medida-codelco.webp" },
         { name: "Pontificia Universidad Católica de Valparaíso", image: "/images/medida-pucv.webp" },
         { name: "Duoc UC Escuela de Construcción", image: "/images/medida-duoc.webp" },
+        { name: "Ministerio de Salud de El Salvador", image: "/images/medida-minsal-sv.webp" },
+        { name: "Grupo 7 Palms Resorts Punta Cana", image: "/images/medida-7palms.webp" },
+        { name: "University Canada West", image: "/images/medida-ucw.webp" },
         // Agrega más logos aquí
     ];
 
