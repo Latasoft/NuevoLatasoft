@@ -64,6 +64,7 @@ const ContactFormEN = () => {
       Country: data.get('country'),
       'Budget (USD)': data.get('budget'),
       Services: data.getAll('service').join(', '),
+      'Project Details': data.get('details'),
       botcheck: data.get('botcheck') ? true : undefined,
     };
 
@@ -145,6 +146,18 @@ const ContactFormEN = () => {
           ))}
         </div>
       </fieldset>
+
+      <div className="md:col-span-2">
+        <label htmlFor="cf-details" className={labelClass}>Project Details *</label>
+        <textarea
+          id="cf-details"
+          name="details"
+          required
+          rows={5}
+          placeholder="Tell us about your project and what you need."
+          className={inputClass}
+        />
+      </div>
 
       <div className="md:col-span-2">
         {status === 'noService' && (
