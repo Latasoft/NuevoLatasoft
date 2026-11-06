@@ -1,8 +1,10 @@
-'use Client';
+'use client';
 import { useState, useRef, useEffect } from 'react';
+import { useT } from 'components/LanguageContext';
 
 const ServicioCard = ({ id, index, titulo, precio, cuotas, descripcion, imagen, fondocolor, fondoCart }) => {
     const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
+    const t = useT();
     const descriptionRef = useRef(null);
 
     const toggleDescriptionVisibility = () => {
@@ -25,8 +27,8 @@ const ServicioCard = ({ id, index, titulo, precio, cuotas, descripcion, imagen, 
             return (
                 <p className={`block mt-7`}>
                     <a className={`block font-semibold text-base md:text-lg text-center py-1 bg-[#613DD2] border-solid border-2 border-[#613DD2] rounded-full text-white`}
-                        href='/contactar' alt='Contactar'>
-                        Contactar
+                        href='/contactar' alt={t('Contactar')}>
+                        {t('Contactar')}
                     </a>
                 </p>
             );
@@ -60,8 +62,8 @@ const ServicioCard = ({ id, index, titulo, precio, cuotas, descripcion, imagen, 
             return (
                 <p className={`block mt-7`}>
                     <a className={`block font-semibold text-base md:text-lg text-center py-1 bg-[#6a4bd0] hover:bg-[#613DD2] border-solid border-2 border-[#613DD2] rounded-full text-white text-opacity-70 hover:text-opacity-100 hover:shadow-md hover:shadow-[rgba(0,0,0,0.4)] transition-all ease-in-out duration-300 `}
-                        href="https://wa.me/56932555677" alt='Contactar'>
-                        Contactar
+                        href="https://wa.me/56932555677" alt={t('Contactar')}>
+                        {t('Contactar')}
                     </a>
                 </p>
             );
@@ -116,7 +118,7 @@ const ServicioCard = ({ id, index, titulo, precio, cuotas, descripcion, imagen, 
                                         className={` ${isDescriptionVisible ? ' shadow-md shadow-[rgba(0,0,0,0.4)] ':' hover:shadow-md hover:shadow-[rgba(0,0,0,0.4)] '} transition-all ease-in-out duration-300 py-1 bg-[#EDE8FB] border-solid border-2 border-[#613DD2] border-opacity-10 rounded-3xl overflow-hidden `}>
                                         <p onClick={toggleDescriptionVisibility} className={` cursor-pointer font-semibold ${isDescriptionVisible ? 'text-opacity-100 ':'text-opacity-70 hover:text-opacity-100 ' } text-base md:text-lg text-center text-[#613DD2] transition-all ease-in-out duration-300 `}>
                                             <span className={` `}>
-                                                {isDescriptionVisible ? 'Ocultar lo que incluye ' : 'Ver lo que incluye '}
+                                                {isDescriptionVisible ? t('Ocultar lo que incluye ') : t('Ver lo que incluye ')}
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 512 512"

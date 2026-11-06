@@ -1,3 +1,6 @@
+'use client';
+import { useT, useLang } from 'components/LanguageContext';
+import ContactFormEN from 'components/ContactFormEN';
 import instagramIcon from 'public/images/instagram.png';
 import whatsappIcon from 'public/images/wsp.png';
 import banderaChile from 'public/images/b-ch.webp';
@@ -9,6 +12,8 @@ import NavigationBar from 'components/NavigationBar';
 import Link from 'next/link';
 
 const ContactoComponent = () => {
+  const t = useT();
+  const { lang } = useLang();
   return (
     <>
       <NavigationBar />
@@ -24,11 +29,11 @@ const ContactoComponent = () => {
         <section className={`relative mx-auto max-w-5xl pt-40 text-center text-white`}>
           <div className={`flex flex-col items-center`}>
             {/* Título y texto descriptivo */}
-            <h2 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed`}>Contacto</h2>
+            <h2 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed`}>{t('Contacto')}</h2>
             <p data-aos-once="true" data-aos='fade'
               className={`max-w-3xl mt-6 text-lg md:text-xl lg:text-2xl text-justify indent-5 hyphens-auto font-Roboto opacity-80 mx-8 lg:mx-0`}
               style={{ lineHeight: `1.86` }} >
-              Potencie su operación con soluciones a medida: en Latasoft hacemos que su proyecto se adapte a las necesidades únicas de su negocio, llevándolo al siguiente nivel de eficiencia y productividad.
+              {t('Potencie su operación con soluciones a medida: en Latasoft hacemos que su proyecto se adapte a las necesidades únicas de su negocio, llevándolo al siguiente nivel de eficiencia y productividad.')}
             </p>
             {/* Botón de contacto 
             <button className={`bg-[#5F3ED9] hover:bg-[#4C34B3] text-white py-2 px-8 rounded-full text-lg transition-all ease-in-out duration-300 mx-auto`}>
@@ -40,7 +45,7 @@ const ContactoComponent = () => {
         <section className={`relative mx-auto max-w-5xl text-center text-white`}>
           {/* Iconos de contacto directo */}
           <div className={`mt-36 md:mx-0 mx-8`}>
-            <h3 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed`} >Hablemos directamente</h3>
+            <h3 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed`} >{t('Hablemos directamente')}</h3>
             <div data-aos-once="true" data-aos='fade' className={`mt-10 flex justify-between items-center max-w-xl mx-auto`}>
               <div className={``}>
                 <Link href="https://wa.me/56932555677">
@@ -63,13 +68,22 @@ const ContactoComponent = () => {
           </div>
 
         </section>
+        {/* Formulario de contacto: solo en la versión en inglés */}
+        {lang === 'en' && (
+          <section className={`relative mx-auto max-w-5xl text-center text-white`}>
+            <div className={`mt-36 mx-4 lg:mx-0`}>
+              <h3 className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed mb-12`}>Send us a message</h3>
+              <ContactFormEN />
+            </div>
+          </section>
+        )}
         <section className={`relative mx-auto max-w-6xl text-center text-white`}>
           <div className={`mt-36 xl:mx-0 mx-4 transiton-all ease-in-out duration-300 `}>
-            <h3 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed`}>Encuéntranos</h3>
+            <h3 data-aos-once="true" data-aos='fade' className={`text-3xl lg:text-4xl font-bold font-RobotoCondensed`}>{t('Encuéntranos')}</h3>
             <div data-aos-once="true" data-aos='fade' className={`flex flex-wrap justify-center gap-5 mt-12 px-2 md:px-3 lg:px-5 bg-white bg-opacity-70 rounded-md `}>
               <div className={` w-full lg:w-[18%] flex flex-col py-2 md:py-3 lg:py-5 `}>
-                <h4 className={` text-2xl pt-5 lg:pt-0 text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Casa Matriz</h4>
-                <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>12 Nte 785 oficina 406, <br className={` hidden lg:inline `} />Viña Del Mar.</p>
+                <h4 className={` text-2xl pt-5 lg:pt-0 text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>{t('Casa Matriz')}</h4>
+                <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>{t('12 Nte 785 oficina 406,')} <br className={` hidden lg:inline `} />Viña Del Mar.</p>
                 <iframe className={` mt-auto w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20`} src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3369.3699734551374!2d-71.55002918435804!3d-33.01034029577017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDAwJzM5LjAiUyA3McKwMzInNTMuMSJX!5e0!3m2!1ses-419!2sus!4v1727751683097!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
               <div className={` w-full lg:w-[18%] flex flex-col py-2 md:py-3 lg:py-5  `}>
@@ -83,12 +97,12 @@ const ContactoComponent = () => {
                 <iframe className={` mt-auto w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20 `} src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3329.192690350818!2d-70.62271922459637!3d-33.44428599719594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzPCsDI2JzM5LjUiUyA3MMKwMzcnMTIuNSJX!5e0!3m2!1ses-419!2sus!4v1727751340786!5m2!1ses-419!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
               <div className={` w-full lg:w-[18%] flex flex-col py-2 md:py-3 lg:py-5 `}>
-                <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Alicante (España)</h4>
-                <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Av. Perfecto Palacio de la Fuente, 1, <br className={` hidden lg:inline `} />03001 Alicante, España.</p>
+                <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>{t('Alicante (España)')}</h4>
+                <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Av. Perfecto Palacio de la Fuente, 1, <br className={` hidden lg:inline `} />{t('03001 Alicante, España.')}</p>
                 <iframe className={` mt-auto w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20 `} src="https://maps.google.com/maps?q=Av.%20Perfecto%20Palacio%20de%20la%20Fuente%201%2C%2003001%20Alicante%2C%20Espa%C3%B1a&output=embed" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
               <div className={` w-full lg:w-[18%] flex flex-col py-2 md:py-3 lg:py-5 `}>
-                <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>Ciudad de México (México)</h4>
+                <h4 className={` text-2xl text-gray-800 font-bold text-opacity-90 font-RobotoCondensed `}>{t('Ciudad de México (México)')}</h4>
                 <p className={` leading-snug mt-0 mb-3 text-lg text-gray-800 font-medium text-opacity-60 `}>Av. Álvaro Obregón 213, <br className={` hidden lg:inline `} />Roma Nte, CDMX.</p>
                 <iframe className={` mt-auto w-full aspect-[4/2] sm:aspect-[4/1] lg:aspect-[5/8] border-solid border-2 border-black border-opacity-20 `} src="https://maps.google.com/maps?q=Av.%20%C3%81lvaro%20Obreg%C3%B3n%20213%2C%20Roma%20Norte%2C%20Ciudad%20de%20M%C3%A9xico&output=embed" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
@@ -98,10 +112,10 @@ const ContactoComponent = () => {
         </section>
         <section className={`relative mx-auto max-w-5xl pb-48 text-center text-white`}>
           <div data-aos-once="true" data-aos='fade' className={`grid gap-8 grid-cols-5 mt-28 mx-8 lg:mx-4`}>
-            <img src={banderaChile.src} alt="Bandera de Chile" className={`w-full aspect-[11.45/7.63] opacity-70 `} />
-            <img src={banderaPeru.src} alt="Bandera de Peru" className={`w-full aspect-[11.45/7.63] opacity-70 `} />
-            <img src={banderaEspaña.src} alt="Bandera de España" className={`w-full aspect-[11.45/7.63] opacity-70 `} />
-            <img src={banderaMexico.src} alt="Bandera de México" className={`w-full aspect-[11.45/7.63] opacity-70 `} />
+            <img src={banderaChile.src} alt={t('Bandera de Chile')} className={`w-full aspect-[11.45/7.63] opacity-70 `} />
+            <img src={banderaPeru.src} alt={t('Bandera de Peru')} className={`w-full aspect-[11.45/7.63] opacity-70 `} />
+            <img src={banderaEspaña.src} alt={t('Bandera de España')} className={`w-full aspect-[11.45/7.63] opacity-70 `} />
+            <img src={banderaMexico.src} alt={t('Bandera de México')} className={`w-full aspect-[11.45/7.63] opacity-70 `} />
           </div>
 
         </section>
@@ -116,36 +130,36 @@ const ContactoComponent = () => {
 
             <div className={` w-full lg:w-2/4 `} >
 
-              <h2 className={` text-2xl md:text-3xl font-bold mb-5 text-left `} >Desarrollamos eso que tienes en  mente, contáctanos.</h2>
-              <p className={` text-base md:text-lg font-normal indent-5 text-justify hyphens-auto `}>En Latasoft, nos dedicamos apasionadamente a eso que tienes en mente. Nuestro compromiso es impulsar la innovación a través de soluciones tecnológicas excepcionales. Con un equipo de expertos en desarrollo, nos esforzamos por transformar ideas en realidades digitales. Descubre el poder de la programación con nosotros y lleva tu visión al siguiente nivel. Conecta con nosotros para construir el futuro juntos.</p>
+              <h2 className={` text-2xl md:text-3xl font-bold mb-5 text-left `} >{t('Desarrollamos eso que tienes en mente, contáctanos.')}</h2>
+              <p className={` text-base md:text-lg font-normal indent-5 text-justify hyphens-auto `}>{t('En Latasoft, nos dedicamos apasionadamente a eso que tienes en mente. Nuestro compromiso es impulsar la innovación a través de soluciones tecnológicas excepcionales. Con un equipo de expertos en desarrollo, nos esforzamos por transformar ideas en realidades digitales. Descubre el poder de la programación con nosotros y lleva tu visión al siguiente nivel. Conecta con nosotros para construir el futuro juntos.')}</p>
 
             </div>
 
             <div className={` w-full lg:w-1/4 `} >
 
-              <h2 className={` text-lg md:text-xl font-bold mb-0 text-left opacity-90 `} >Direcciones</h2>
+              <h2 className={` text-lg md:text-xl font-bold mb-0 text-left opacity-90 `} >{t('Direcciones')}</h2>
 
-              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `}>Casa Matriz</h3>
+              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `}>{t('Casa Matriz')}</h3>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
-                12 Nte 785 oficina 406, Viña Del Mar.
+                {t('12 Nte 785 oficina 406, Viña Del Mar.')}
               </address>
 
-              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina Santo Domingo</h3>
+              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >{t('Oficina Santo Domingo')}</h3>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
                 Los Crisantemos 146, Santo Domingo.
               </address>
 
-              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina Santiago</h3>
+              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >{t('Oficina Santiago')}</h3>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
                 Los Jesuitas 881, Providencia.
               </address>
               
-              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina España</h3>
+              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >{t('Oficina España')}</h3>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
-                Av. Perfecto Palacio de la Fuente, 1, Alicante, España.
+                {t('Av. Perfecto Palacio de la Fuente, 1, Alicante, España.')}
               </address>
 
-              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >Oficina México</h3>
+              <h3 className={` text-base md:text-lg font-medium mt-4 mb-0 ml-4 text-left opacity-90 `} >{t('Oficina México')}</h3>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
                 Av. Álvaro Obregón 213, Roma Nte, CDMX.
               </address>
@@ -153,18 +167,18 @@ const ContactoComponent = () => {
             </div>
             <div className={` w-full lg:w-1/4 `} >
 
-              <h2 className={` text-lg md:text-xl font-bold mb-2 text-left opacity-90 `} >Horario</h2>
+              <h2 className={` text-lg md:text-xl font-bold mb-2 text-left opacity-90 `} >{t('Horario')}</h2>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
-                Lunes a viernes de<br className={` hidden lg:inline `} /> 9:00 a 18:00 horas.
+                {t('Lunes a viernes de')}<br className={` hidden lg:inline `} /> {t('9:00 a 18:00 horas.')}
               </address>
 
-              <h2 className={` text-lg md:text-xl font-bold mt-4 mb-2 text-left opacity-90 `} >Teléfonos</h2>
+              <h2 className={` text-lg md:text-xl font-bold mt-4 mb-2 text-left opacity-90 `} >{t('Teléfonos')}</h2>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
                 <a href="tel:+56932555677">+56 9 3255 5677</a>
                 {/* testing */}
               </address>
 
-              <h2 className={` text-lg md:text-xl font-bold mt-4 mb-2 text-left opacity-90 `} >Correos</h2>
+              <h2 className={` text-lg md:text-xl font-bold mt-4 mb-2 text-left opacity-90 `} >{t('Correos')}</h2>
               <address className={` not-italic text-base md:text-lg font-normal opacity-90 ml-4 `}>
                 <a href="mailto:contacto@latasoft.cl">contacto@latasoft.cl</a>
               </address>

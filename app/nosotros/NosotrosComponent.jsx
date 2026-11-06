@@ -1,6 +1,7 @@
 "use client"; // Marcar el componente como Client Component
 import { useEffect, useState } from 'react';
 import NavigationBar from 'components/NavigationBar';
+import { useT } from 'components/LanguageContext';
 
 import icono1 from 'public/images/icono1.png';
 import icono2 from 'public/images/icono2.png';
@@ -59,6 +60,7 @@ const porquenosotros = [
 ];
 
 const NosotrosComponent = () => {
+    const t = useT();
       
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
@@ -94,11 +96,9 @@ const NosotrosComponent = () => {
 
                 {/* Sección ¿Quiénes somos? */}
                 <section className={`relative bg-gray-800 z-40 text-white pt-40 pb-12 px-6`}>
-                    <h2 data-aos-once="true" data-aos='fade' className={`text-[rgb(255,255,0)] text-center text-3xl lg:text-4xl mb-6 transition-all ease-in-out duration-200 font-bold font-RobotoCondensed `}>¿Quiénes somos?</h2>
+                    <h2 data-aos-once="true" data-aos='fade' className={`text-[rgb(255,255,0)] text-center text-3xl lg:text-4xl mb-6 transition-all ease-in-out duration-200 font-bold font-RobotoCondensed `}>{t('¿Quiénes somos?')}</h2>
                     <p data-aos-once="true" data-aos='fade' className={`text-justify hyphens-auto indent-8 max-w-5xl mx-auto text-lg md:text-xl lg:text-2xl transition-all ease-in-out duration-200 opacity-80 `} style={{ lineHeight: `1.86` }}>
-                        Somos una empresa de desarrollo de software y aplicaciones, fundada en 2021 en Viña del Mar, 
-                        enfocada en crear soluciones tecnológicas a medida para nuestros clientes. Ayudamos a las empresas a optimizar procesos, 
-                        trabajar con mayor agilidad e impulsar su crecimiento mediante tecnología moderna y eficiente.
+                        {t('Somos una empresa de desarrollo de software y aplicaciones, fundada en 2021 en Viña del Mar, enfocada en crear soluciones tecnológicas a medida para nuestros clientes. Ayudamos a las empresas a optimizar procesos, trabajar con mayor agilidad e impulsar su crecimiento mediante tecnología moderna y eficiente.')}
                     </p>
                 </section>
 
@@ -117,15 +117,15 @@ const NosotrosComponent = () => {
 
                     {/* Contenido superpuesto */}
                     <div className={`relative mx-auto max-w-6xl text-white bg-black bg-opacity-30 px-5 pt-14 pb-20 rounded-md `}>
-                        <h2 data-aos-once="true" data-aos='fade' className={`text-white text-center text-3xl lg:text-4xl mb-24 transition-all ease-in-out duration-200 font-bold font-RobotoCondensed`}>¿Por qué nosotros?</h2>
+                        <h2 data-aos-once="true" data-aos='fade' className={`text-white text-center text-3xl lg:text-4xl mb-24 transition-all ease-in-out duration-200 font-bold font-RobotoCondensed`}>{t('¿Por qué nosotros?')}</h2>
 
                         {!!porquenosotros?.length && (
                             <div className={`grid grid-cols-1 md:grid-cols-3 gap-y-12 gap-x-6 text-center font-Roboto  `}>
                                 {porquenosotros.map((item, index) => (
                                     <div key={index} data-aos-once="true" data-aos='fade'>
-                                        <img src={item.icono.src} alt={item.titulo} className={`mx-auto mb-6 w-24 h-auto opacity-70 `} />
-                                        <h3 className={` font-normal text-2xl lg:text-3xl font-RobotoCondensed`}>{item.titulo}</h3>
-                                        {item.descripcion && (<p className={` font-light font-Roboto text-lg lg:text-xl opacity-80 `}>{item.descripcion}</p>)}
+                                        <img src={item.icono.src} alt={t(item.titulo)} className={`mx-auto mb-6 w-24 h-auto opacity-70 `} />
+                                        <h3 className={` font-normal text-2xl lg:text-3xl font-RobotoCondensed`}>{t(item.titulo)}</h3>
+                                        {item.descripcion && (<p className={` font-light font-Roboto text-lg lg:text-xl opacity-80 `}>{t(item.descripcion)}</p>)}
                                     </div>
                                 ))}
                             </div>
@@ -139,7 +139,7 @@ const NosotrosComponent = () => {
                 </section>
 
                 <section className={`relative bg-gray-800 z-40 text-white px-6 -mt-48 pt-12 pb-6`}>
-                    <h2 data-aos-once="true" data-aos='fade' className={`text-white text-center mb-6 text-3xl lg:text-4xl transition-all ease-in-out duration-200 font-bold font-RobotoCondensed `} style={{ lineHeight: `1.38` }}>Hablemos de tu proyecto</h2>
+                    <h2 data-aos-once="true" data-aos='fade' className={`text-white text-center mb-6 text-3xl lg:text-4xl transition-all ease-in-out duration-200 font-bold font-RobotoCondensed `} style={{ lineHeight: `1.38` }}>{t('Hablemos de tu proyecto')}</h2>
                 </section>
 
                 <section className={`relative z-30 -translate-y-20`}  style={{ filter: 'drop-shadow(0 1rem 0.2rem rgb(0,0,0,0.2))' }}>

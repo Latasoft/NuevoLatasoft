@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { Footer } from '../components/footer';
 import AOSInitializer from 'components/AOSInitializer';
+import { LanguageProvider } from 'components/LanguageContext';
 
 export const metadata = {
     title: {
@@ -40,9 +41,11 @@ const RootLayout = ({ children }) => {
 
             </head>
             <body className="antialiased text-white min-w-full min-h-screen bg-black flex flex-col relative ">
-                <AOSInitializer />
-                {children}
-                <Footer />
+                <LanguageProvider>
+                    <AOSInitializer />
+                    {children}
+                    <Footer />
+                </LanguageProvider>
             </body>
         </html>
     );
