@@ -8,15 +8,18 @@ import serviciosbgB from 'public/images/serviciosbgB.jpg';
 import serviciosbgC from 'public/images/serviciosbg.jpg';
 
 import ServicioCard from './ServicioCard';
-import { useT } from 'components/LanguageContext';
+import { useT, useLang } from 'components/LanguageContext';
 
 
 const ServiciosComponent = () => {
     const t = useT();
+    const { lang } = useLang();
 
     const ServiciosCards = [
         {
             id: 'Web_Care_Lite',
+            precioEN: 'US$10', // precio en dólares para la versión en inglés
+            cuotasEN: '/month',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#FFFFFF]',
             titulo: 'Web Care Lite',
@@ -27,6 +30,7 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Integraciones',
+            precioEN: 'From US$159.99', // precio en dólares para la versión en inglés
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#FFFF00]',
             titulo: 'Integraciones',
@@ -36,6 +40,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Web_Care_Pro',
+            precioEN: 'US$50', // precio en dólares para la versión en inglés
+            cuotasEN: ' /month',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#613DD2]',
             titulo: 'Web Care Pro',
@@ -46,6 +52,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Sistema_Comercial_Inteligente',
+            precioEN: 'US$149.99', // precio en dólares para la versión en inglés
+            cuotasEN: ' /month',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#FFFFFF]',
             titulo: 'Sistema Comercial Inteligente',
@@ -56,6 +64,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Diagnóstico_Comercial_Inteligente',
+            precioEN: 'US$150', // precio en dólares para la versión en inglés
+            cuotasEN: 'One-time payment',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#FFFF00]',
             titulo: 'Diagnóstico Comercial Inteligente',
@@ -66,6 +76,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Sistema_de_Captación_Digital',
+            precioEN: 'US$309.99', // precio en dólares para la versión en inglés
+            cuotasEN: '3 installments',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#FFFFFF]',
             titulo: 'Sistema de Captación Digital',
@@ -76,6 +88,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Web_Corporativa_Pro',
+            precioEN: 'US$480', // precio en dólares para la versión en inglés
+            cuotasEN: '3 installments',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#613DD2]',
             titulo: 'Web Corporativa Pro',
@@ -86,6 +100,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Web_Gestionable',
+            precioEN: 'US$669.99', // precio en dólares para la versión en inglés
+            cuotasEN: '3 installments',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#FFFFFF]',
             titulo: 'Web Gestionable',
@@ -96,6 +112,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Tienda_Online_Inicial',
+            precioEN: 'US$389.99', // precio en dólares para la versión en inglés
+            cuotasEN: '3 installments',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#FFFF00]',
             titulo: 'Tienda Online Inicial',
@@ -106,6 +124,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'Ecommerce_Growth',
+            precioEN: 'US$719.99', // precio en dólares para la versión en inglés
+            cuotasEN: '3 installments',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#613DD2]',
             titulo: 'Ecommerce Growth',
@@ -116,6 +136,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'App_MVP',
+            precioEN: 'US$2,000', // precio en dólares para la versión en inglés
+            cuotasEN: '4 installments',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#FFFFFF]',
             titulo: 'App MVP',
@@ -126,6 +148,8 @@ const ServiciosComponent = () => {
         },
         {
             id: 'App_Móvil_Android/iOS',
+            precioEN: 'US$5,000', // precio en dólares para la versión en inglés
+            cuotasEN: '6 installments',
             fondoCart: serviciosbgB,
             fondocolor: 'bg-[#613DD2]',
             titulo: 'App Móvil Android/iOS',
@@ -152,14 +176,25 @@ const ServiciosComponent = () => {
                             fondoCart={item.fondoCart}
                             fondocolor={item.fondocolor}
                             titulo={t(item.titulo)}
-                            precio={t(item.precio)}
-                            cuotas={t(item.cuotas)}
+                            precio={lang === 'en' ? item.precioEN : item.precio}
+                            cuotas={lang === 'en' ? item.cuotasEN : item.cuotas}
                             descripcion={t(item.descripcion)}
                             imagen={item.imagen} />
                     ))}
                 </>
             )}
 
+            {/* Nota de precios internacionales: solo en la versión en inglés */}
+            {lang === 'en' && (
+                <section className={`relative bg-gray-800 text-white px-6 pt-16 pb-28`}>
+                    <div className={`max-w-3xl mx-auto text-center`}>
+                        <h2 className={`text-2xl md:text-3xl font-bold font-RobotoCondensed text-[rgb(255,255,0)] mb-4`}>International Pricing</h2>
+                        <p className={`text-lg md:text-xl font-Roboto opacity-80 leading-relaxed`}>
+                            Our services are available to businesses in Chile, Mexico, Spain and the United States. All prices are listed in USD. Local payment arrangements and applicable taxes will be confirmed during the quotation process.
+                        </p>
+                    </div>
+                </section>
+            )}
 
         </main>
         </>

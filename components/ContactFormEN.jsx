@@ -22,15 +22,15 @@ const services = [
   'Web Care Lite',
   'Integrations',
   'Web Care Pro',
-  'Smart Sales System',
-  'Smart Sales Assessment',
-  'Digital Lead Generation System',
+  'Commercial Intelligent System',
+  'Intelligent Commercial Diagnosis',
+  'Digital Capture System',
   'Corporate Website Pro',
-  'Self-Managed Website',
-  'Starter Online Store',
+  'Web Portal',
+  'Initial Online Store',
   'Ecommerce Growth',
-  'App MVP',
-  'Android/iOS Mobile App',
+  'MVP App',
+  'Mobile App Android/iOS',
 ];
 
 const budgets = ['$100 - $500', '$500 - $1K', '$1K - $2K', '$2K - $3K', '$3K - $5K', '+$5K', '+$10K'];
